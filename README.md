@@ -113,7 +113,7 @@ Limpar toda a EEPROM (irá gravar 0xFF em todas as posições de memória)
 ./programmer.py /dev/porta_serial clear
 ```
 
-Limpar um block da EEPROM
+Limpar um bloco da EEPROM
 ```
 ./programmer.py /dev/porta_serial clear --address 0x1e00 --address-end 0x2a00
 ```
