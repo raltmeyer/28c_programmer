@@ -4,9 +4,9 @@
 
 ## Descrição Básica
 
-Esse gravador de EEPROMs nasceu para dar suporte ao desenvolvimento de outro projeto de retro-computing em que estou trabalhando, onde o foco é recriar computadores da década de 80 do zero, de forma modular e que seja possível rodar binários originais da época.
+Esse gravador de EEPROMs nasceu para dar suporte ao desenvolvimento de outro projeto de retro-computing em que estou trabalhando, onde o foco é recriar computadores da década de 80 do zero de forma modular e que seja possível rodar binários originais da época.
 
-O gravador foi criado para dar suporte à EEPROM AT28C256 de 32Kb da ATMel, e até o momento o firmware dá suporte apenas para esse chip, podendo ser facilmente convertido para outras memórias paralelas.
+O gravador foi criado com base na EEPROM AT28C256 de 32Kb da ATMel, e até o momento o firmware é compativel apenas com esse chip, podendo ser facilmente convertido para outras memórias paralelas.
 
 
 ## O que o projeto contém
@@ -29,7 +29,7 @@ O projeto da placa está disponível em [ZIP com Gerber da Placa](https://github
 
 ## Firmware da placa
 
-O firmware da placa foi desenvolvido em C++ no Eclipe IDE, e traz como característica principal a implementação de interpretador de mensagens vindas do computador host. Com o interpretador de mensagens, foi possível organizar e facilitar a codificação de novas funcionalidades ao firmware.
+O firmware da placa foi desenvolvido em C++ no Eclipse IDE, e traz como característica principal a implementação de interpretador de mensagens vindas do computador host. Com o interpretador de mensagens, foi possível organizar e facilitar a codificação de novas funcionalidades ao firmware.
 
 ### Núcledo o Firmware
 - [28c_programmer.h](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/28c_programmer.h) Header principal do firmware
