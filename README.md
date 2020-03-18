@@ -4,7 +4,15 @@
 
 [Versão em Português](https://github.com/raltmeyer/28c_programmer/blob/master/README_ptbr.md)
 
-## Basic description
+## Table of contents
+* [General info](#basic-description)
+* [Inside the project](#inside-the-project)
+* [Circuit board](#circuit-board)
+* [Board firmware](#board-firmware)
+* [Command line client](#command-line-client)
+* [Board Details](#board-details)
+
+## General info
 
 This EEPROM programmer was born to support the development of another retro-computing project that I'm working on, where the focus is to recreate computers from the 80's from scratch in a modular construction and compatible with the original binaries.
 
@@ -30,10 +38,6 @@ Schematic for the Board V1.3
 The board design is available in [ZIP with Board Gerber](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/Gerber_eeprom28_programmer.zip). 
 I used the services from [JLCPCB.com](https://jlcpcb.com) and recommend it.
 
-## Firmware da placa
-
-O firmware da placa foi desenvolvido em C++ no Eclipse IDE, e traz como característica principal a implementação de interpretador de mensagens vindas do computador host. Com o interpretador de mensagens, foi possível organizar e facilitar a codificação de novas funcionalidades ao firmware.
-
 ## Board firmware
 
 The board's firmware was developed in C++ using the Eclipse IDE, and its main feature is the implementation of a message interpreter from the host computer. With the message interpreter, it was possible to organize the code for new features to the firmware.
@@ -53,7 +57,7 @@ The board's firmware was developed in C++ using the Eclipse IDE, and its main fe
 - [cmd_read_byte.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_read_byte.cpp) Function that reads 1 byte
 - [cmd_write_block.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_write_block.cpp) Function that writes from 1 to 16 bytes to the EEPROM
 
-## Command line client for the host computer
+## Command line client
 
 Written in Python3, this layer is responsible for read/write files on the host machine and send/receive to/from the board's firmware.
 
