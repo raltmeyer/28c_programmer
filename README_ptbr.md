@@ -4,7 +4,7 @@
 
 [English Version](https://github.com/raltmeyer/28c_programmer)
 
-## Table of contents
+## Índice
 * [Descrição Básica](#descri%C3%A7%C3%A3o-b%C3%A1sica)
 * [O que o projeto contém](#o-que-o-projeto-cont%C3%A9m)
 * [Placa de circuito](#placa-de-circuito)

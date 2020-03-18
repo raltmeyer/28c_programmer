@@ -16,13 +16,13 @@
 
 This EEPROM programmer was born to support the development of another retro-computing project that I'm working on, where the focus is to recreate computers from the 80's from scratch in a modular construction and compatible with the original binaries.
 
-The programmer was created with theATMel's 32Kb EEPROM AT28C256 in mind, and at this time firmware is only compatible with this chip, and can be easily converted to other parallel memories.
+The programmer was created with the ATMel's 32Kb EEPROM AT28C256 in mind, and at this time the firmware is only compatible with this chip, but can be easily converted to other parallel memories.
 
 ## Inside the project
 
 The project is divided into three parts:
-- Schematic design of the circuit and design of the PCB board (Hardware).
-- Firmware for the board (C ++)
+- Schematic design and Circuit board design (Hardware).
+- Board Firmware (C++)
 - Client that runs on the host machine responsible for communicating with the board (Python)
 
 
@@ -35,8 +35,8 @@ The control bus and the data bus are connected directly to the Nano, and the 15 
 Schematic for the Board V1.3
 ![chematic for the Board V1.3](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/Schematic_eeprom28_programmer.png)
 
-The board design is available in [ZIP with Board Gerber](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/Gerber_eeprom28_programmer.zip). 
-I used the services from [JLCPCB.com](https://jlcpcb.com) and recommend it.
+The board design is available on a [ZIP file with Board Gerber](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/Gerber_eeprom28_programmer.zip). 
+I used the board print services from [JLCPCB.com](https://jlcpcb.com) and I recommend it.
 
 ## Board firmware
 
