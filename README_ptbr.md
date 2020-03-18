@@ -4,6 +4,14 @@
 
 [English Version](https://github.com/raltmeyer/28c_programmer)
 
+## Table of contents
+* [Descrição Básica](#descri%C3%A7%C3%A3o-b%C3%A1sica)
+* [O que o projeto contém](#o-que-o-projeto-cont%C3%A9m)
+* [Placa de circuito](#placa-de-circuito)
+* [Firmware da placa](#firmware-da-placa)
+* [Cliente de linha de comando](#cliente-de-linha-de-comando)
+* [Detalhes da Placa](#detalhes-da-placa)
+
 ## Descrição Básica
 
 Esse gravador de EEPROMs nasceu para dar suporte ao desenvolvimento de outro projeto de retro-computing em que estou trabalhando, onde o foco é recriar computadores da década de 80 do zero de forma modular e que seja possível rodar binários originais da época.
@@ -48,7 +56,7 @@ O firmware da placa foi desenvolvido em C++ no Eclipse IDE, e traz como caracter
 - [cmd_read_byte.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_read_byte.cpp) Função que lê 1 byte
 - [cmd_write_block.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_write_block.cpp) Função que grava de 1 a 16 bytes na EEPROM
 
-## Cliente de linha de comando para o computador host
+## Cliente de linha de comando
 
 Escrito em Python3, essa camada do projeto é responsável por ler/escrever arquivos na máquina host e enviar/receber para o firmware da placa.
 

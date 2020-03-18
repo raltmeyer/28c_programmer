@@ -5,7 +5,7 @@
 [Versão em Português](https://github.com/raltmeyer/28c_programmer/blob/master/README_ptbr.md)
 
 ## Table of contents
-* [General info](#basic-description)
+* [General info](#general-info)
 * [Inside the project](#inside-the-project)
 * [Circuit board](#circuit-board)
 * [Board firmware](#board-firmware)
