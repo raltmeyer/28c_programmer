@@ -2,7 +2,7 @@
 
 2020 - Rogerio Altmeyer
 
-[Versão em Português](https://github.com/raltmeyer/28c_programmer/README_ptbr.md)
+[Versão em Português](https://github.com/raltmeyer/28c_programmer/blob/master/README_ptbr.md)
 
 ## Basic description
 
