@@ -16,7 +16,7 @@
 
 This EEPROM programmer was born to support the development of another retro-computing project that I'm working on, where the focus is to recreate computers from the 80's from scratch in a modular construction and compatible with the original binaries.
 
-The recorder was created with theATMel's 32Kb EEPROM AT28C256 in mind, and at this time firmware is only compatible with this chip, and can be easily converted to other parallel memories.
+The programmer was created with theATMel's 32Kb EEPROM AT28C256 in mind, and at this time firmware is only compatible with this chip, and can be easily converted to other parallel memories.
 
 ## Inside the project
 
