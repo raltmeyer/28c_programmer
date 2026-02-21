@@ -148,11 +148,14 @@ Limpar um bloco da EEPROM
 ## Detalhes da Placa
 
 Placa Versão 1.3 em 3D
+
 ![3D da Placa V1.3](board/PCB_3D_eeprom28_programmer.png)
 
 Placa Versão 1.3
+
 ![Placa V1.3](board/PCB_eeprom28_programmer.png)
 
 Placa Versão 1.1 montada
+
 ![Placa V1.1 Montada](board/img_board_rev1.png)
 

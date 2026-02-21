@@ -150,11 +150,14 @@ Clear a specific EEPROM block:
 ## Board Details
 
 Board version 1.3 - 3D view
+
 ![3D Board version 1.3](board/PCB_3D_eeprom28_programmer.png)
 
 Board version 1.3
+
 ![Board version 1.3](board/PCB_eeprom28_programmer.png)
 
 Board version 1.1 assembled
+
 ![Board 1.1 assembled](board/img_board_rev1.png)
 
