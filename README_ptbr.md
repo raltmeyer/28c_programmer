@@ -49,28 +49,28 @@ A placa usa o Arduino Nano como componente principal, responsavel pela comunica�
 As linhas de controle e o bus de dados estão conectados diretamente ao Nano, e as 15 linhas de endereçamento do chip são alimentadas através de dois shift registers de 8 bits ligados em sequência.
 
 Esquemático do Circuito da Placa V1.3
-![Esquemático do Circuito da Placa V1.3](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/Schematic_eeprom28_programmer.png)
+![Esquemático do Circuito da Placa V1.3](board/Schematic_eeprom28_programmer.png)
 
-O projeto da placa está disponível em [ZIP com Gerber da Placa](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/Gerber_eeprom28_programmer.zip). Utilizei os serviços de confecção da [JLCPCB.com](https://jlcpcb.com) e recomendo.
+O projeto da placa está disponível em [ZIP com Gerber da Placa](board/Gerber_eeprom28_programmer.zip). Utilizei os serviços de confecção da [JLCPCB.com](https://jlcpcb.com) e recomendo.
 
 ## Firmware da placa
 
 O firmware da placa foi desenvolvido em C++ no Eclipse IDE, e traz como característica principal a implementação de interpretador de mensagens vindas do computador host. Com o interpretador de mensagens, foi possível organizar e facilitar a codificação de novas funcionalidades ao firmware.
 
 ### Núcledo o Firmware
-- [28c_programmer.h](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/28c_programmer.h) Header principal do firmware
-- [pin_defs.h](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/pin_defs.h) Header com a definição de pinos
-- [main.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/main.cpp) Fonte principal contendo as funções setup() e loop()
-- [interface.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/interface.cpp) Contém todas as funções responsáveis pela interface entre Arduino e EEPROM
-- [util.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/util.cpp) Funções diversas de apoio ao código
-- [cmd_processor.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_processor.cpp) Implementa o interpretador de mensagens com o host
+- [28c_programmer.h](firmware/28c_programmer.h) Header principal do firmware
+- [pin_defs.h](firmware/pin_defs.h) Header com a definição de pinos
+- [main.cpp](firmware/main.cpp) Fonte principal contendo as funções setup() e loop()
+- [interface.cpp](firmware/interface.cpp) Contém todas as funções responsáveis pela interface entre Arduino e EEPROM
+- [util.cpp](firmware/util.cpp) Funções diversas de apoio ao código
+- [cmd_processor.cpp](firmware/cmd_processor.cpp) Implementa o interpretador de mensagens com o host
 
 ### Funções para uso pelo host
-- [cmd_clear_block.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_clear_block.cpp) Função para limpar EEPROM
-- [cmd_get_version.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_get_version.cpp) Função que retorna a versão do firmware da placa
-- [cmd_read_block.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_read_block.cpp) Função que lê um bloco de 16 bytes e retorna para o host
-- [cmd_read_byte.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_read_byte.cpp) Função que lê 1 byte
-- [cmd_write_block.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_write_block.cpp) Função que grava de 1 a 16 bytes na EEPROM
+- [cmd_clear_block.cpp](firmware/cmd_clear_block.cpp) Função para limpar EEPROM
+- [cmd_get_version.cpp](firmware/cmd_get_version.cpp) Função que retorna a versão do firmware da placa
+- [cmd_read_block.cpp](firmware/cmd_read_block.cpp) Função que lê um bloco de 16 bytes e retorna para o host
+- [cmd_read_byte.cpp](firmware/cmd_read_byte.cpp) Função que lê 1 byte
+- [cmd_write_block.cpp](firmware/cmd_write_block.cpp) Função que grava de 1 a 16 bytes na EEPROM
 
 ## Cliente de linha de comando
 

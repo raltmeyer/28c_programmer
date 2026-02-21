@@ -50,9 +50,9 @@ The board uses an Arduino Nano as its main component, which is responsible for c
 The control bus and the data bus are connected directly to the Nano, while the 15 addressing lines of the chip are driven through two cascaded 8-bit shift registers.
 
 Schematic for Board V1.3
-![Schematic for Board V1.3](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/Schematic_eeprom28_programmer.png)
+![Schematic for Board V1.3](board/Schematic_eeprom28_programmer.png)
 
-The board design is available in a [ZIP file containing the Gerber files](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/Gerber_eeprom28_programmer.zip). 
+The board design is available in a [ZIP file containing the Gerber files](board/Gerber_eeprom28_programmer.zip). 
 I used the board printing services from [JLCPCB.com](https://jlcpcb.com) and highly recommend them.
 
 ## Board firmware
@@ -60,19 +60,19 @@ I used the board printing services from [JLCPCB.com](https://jlcpcb.com) and hig
 The board's firmware was developed in C++ using the Eclipse IDE. Its main feature is a message interpreter that processes commands from the host computer. This interpreter makes it easy to organize the code and add new features to the firmware.
 
 ### Firmware Core
-- [28c_programmer.h](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/28c_programmer.h) Main header
-- [pin_defs.h](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/pin_defs.h) Header with pin definitions
-- [main.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/main.cpp) Main source file containing the setup() and loop() functions
-- [interface.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/interface.cpp) Contains all functions for interfacing the Arduino with the EEPROM
-- [util.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/util.cpp) Miscellaneous helper code
-- [cmd_processor.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_processor.cpp) Implements the message interpreter
+- [28c_programmer.h](firmware/28c_programmer.h) Main header
+- [pin_defs.h](firmware/pin_defs.h) Header with pin definitions
+- [main.cpp](firmware/main.cpp) Main source file containing the setup() and loop() functions
+- [interface.cpp](firmware/interface.cpp) Contains all functions for interfacing the Arduino with the EEPROM
+- [util.cpp](firmware/util.cpp) Miscellaneous helper code
+- [cmd_processor.cpp](firmware/cmd_processor.cpp) Implements the message interpreter
 
 ### Commands for use by the host
-- [cmd_clear_block.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_clear_block.cpp) Clears the EEPROM
-- [cmd_get_version.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_get_version.cpp) Returns the board's firmware version
-- [cmd_read_block.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_read_block.cpp) Reads a 16-byte block and returns it to the host
-- [cmd_read_byte.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_read_byte.cpp) Reads a single byte
-- [cmd_write_block.cpp](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_firmware/cmd_write_block.cpp) Writes 1 to 16 bytes to the EEPROM
+- [cmd_clear_block.cpp](firmware/cmd_clear_block.cpp) Clears the EEPROM
+- [cmd_get_version.cpp](firmware/cmd_get_version.cpp) Returns the board's firmware version
+- [cmd_read_block.cpp](firmware/cmd_read_block.cpp) Reads a 16-byte block and returns it to the host
+- [cmd_read_byte.cpp](firmware/cmd_read_byte.cpp) Reads a single byte
+- [cmd_write_block.cpp](firmware/cmd_write_block.cpp) Writes 1 to 16 bytes to the EEPROM
 
 ## Command line client
 
