@@ -1,23 +1,39 @@
 # 28c_Programmer
 
-2020 - Rogerio Altmeyer
+2020 - 2026 - Rogerio Altmeyer
 
 [English Version](https://github.com/raltmeyer/28c_programmer)
 
 ## Índice
-* [Descrição Básica](#descri%C3%A7%C3%A3o-b%C3%A1sica)
 * [O que o projeto contém](#o-que-o-projeto-cont%C3%A9m)
 * [Placa de circuito](#placa-de-circuito)
 * [Firmware da placa](#firmware-da-placa)
 * [Cliente de linha de comando](#cliente-de-linha-de-comando)
 * [Detalhes da Placa](#detalhes-da-placa)
 
-## Descrição Básica
+## Introdução
 
-Esse gravador de EEPROMs nasceu para dar suporte ao desenvolvimento de outro projeto de retro-computing em que estou trabalhando, onde o foco é recriar computadores da década de 80 do zero de forma modular e que seja possível rodar binários originais da época.
+Esse gravador de EEPROMs nasceu para dar suporte ao desenvolvimento de outro projeto de retro-computing em que estou trabalhando, onde o foco é recriar computadores da década de 80 do zero de forma modular e TALVEZ rodar binários compatíveis e originais da época.
+
+Você notará semelhanças com o computador 8 bits criado por Ben Eater. Embora o trabalho dele tenha servido como inspiração inicial, o caminho que decidi seguir aqui é um pouco diferente.
+
+Meu objetivo principal é criar um projeto baseado no meu sonho de infância, onde eu costumava ler livros como "Construa seu próprio computador Z80" de Steve Ciarcia:
+
+<img src="images/book1.png" width="35%" alt="Build your own Z80 computer">&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/book2.png" width="35%" alt="Build your own Z80 computer">
+
+Naquela época, eu tinha de 9 a 12 anos. Meu tio Nicolau era um radioamador muito ativo e tinha muitos livros sobre eletrônica. Eu passava horas lendo-os e sonhando em construir meu próprio computador. Ele foi e ainda é uma grande inspiração para mim, e ele me deu meu primeiro ferro de solda e minha paixão pela eletrônica e tecnologia.
+
+<!--
+<img src="images/disney-reference.png" width="35%" alt="Professor Pardal e Lampadinha">
+
+A propósito, toda a nossa família nos chamava de "Professor Pardal e Lampadinha", os clássicos personagens dos quadrinhos do Pato Donald conhecidos por suas engenhocas.
+-->
+
+Essa série de projetos é uma forma de realizar esse sonho de infância, e ao mesmo tempo, compartilhar minha jornada com a comunidade de retro-computing.
+
+## Informações Gerais
 
 O gravador foi criado com base na EEPROM AT28C256 de 32Kb da ATMel, e até o momento o firmware é compativel apenas com esse chip, podendo ser facilmente convertido para outras memórias paralelas.
-
 
 ## O que o projeto contém
 
@@ -132,11 +148,11 @@ Limpar um bloco da EEPROM
 ## Detalhes da Placa
 
 Placa Versão 1.3 em 3D
-![3D da Placa V1.3](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/PCB_3D_eeprom28_programmer.png)
+![3D da Placa V1.3](board/PCB_3D_eeprom28_programmer.png)
 
 Placa Versão 1.3
-![Placa V1.3](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/PCB_eeprom28_programmer.png)
+![Placa V1.3](board/PCB_eeprom28_programmer.png)
 
 Placa Versão 1.1 montada
-![Placa V1.1 Montada](https://github.com/raltmeyer/28c_programmer/blob/master/28c_programmer_board/img_board_rev1.png)
+![Placa V1.1 Montada](board/img_board_rev1.png)
 

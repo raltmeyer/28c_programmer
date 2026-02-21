@@ -19,7 +19,7 @@ const static char msg_cmdshort[] PROGMEM = "#ERROR_COMMAND_MUST_HAVE_4_CHARS";
 
 //Struct with commands
 typedef struct commands_s {
-	char command_text[4];
+	char command_text[5];
 	void (*command)(char[]);
 };
 const commands_s commands[] = {
@@ -36,22 +36,19 @@ int commands_qtd = sizeof(commands) / sizeof(commands_s);
 //*********
 //*
 void cmd_processor() {
-	String input_line;
-
 	if (Serial.available()) {
-		input_line = Serial.readStringUntil('\r'); //Read line from serial
-
-		if (input_line.length() < 4) { //min command size
+		int bytes_read = Serial.readBytesUntil('\r', cmd_buffer, CMD_BUFFER - 1); //Read line from serial
+		cmd_buffer[bytes_read] = '\0'; // Null-terminate string
+		
+		if (bytes_read < 4) { //min command size
 			Serial.println(getProgMemString(msg_cmdshort));
 			return;
 		}
 
-		if (input_line.length() > CMD_BUFFER) { //Command line is too large
+		if (bytes_read >= CMD_BUFFER - 1) { //Command line is too large
 			Serial.println(getProgMemString(msg_toolong));
 			return;
 		}
-
-		input_line.toCharArray(cmd_buffer, CMD_BUFFER, 0);
 
 		for (int cnt = 0; cnt < commands_qtd; cnt++) { //Search for command
 			if (!strncmp(cmd_buffer, commands[cnt].command_text, 4)) {

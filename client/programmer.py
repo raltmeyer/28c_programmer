@@ -25,7 +25,7 @@ args = parser.parse_args()
 ser = serial.Serial(
     port=args.serial,
     baudrate=57600,
-    timeout=360
+    timeout=5
 )
 print ('Serial port   : ' + ser.name)
 print ('Serial status : ' + str(ser.isOpen()))
@@ -45,20 +45,26 @@ if (args.mode == 'read'):
 	with open (args.file, 'wb') as file:
 		for address in range(args.address_begin, args.address_end, 16):
 			#create the command message
-			cmd = "RDBK:" + hex(address) + "\r"
+			cmd = "RDBK:" + format(address, '04X') + "\r"
 
 			#send to the board and wait response
 			ser.write(cmd.encode())
 			line_read = ser.read_until().decode().rstrip()
-			if (line_read[0] == "#"):
-				if (line_read != "#WRBK_OK"):
-					print ("\n" + line_read)
+			
+			if not line_read:
+				continue
+				
+			if line_read[0] == "#":
+				print ("\n" + line_read)
+				continue
+
 			progressbar((address - args.address_begin)/(args.address_end - args.address_begin), "Block " + format(address, '04X'))
 
 			#write data received to the file
 			line_striped = line_read.split(':')
 			for data in line_striped[1:]:
-				file.write(struct.pack("=B",int(data,16)))
+				if data:
+					file.write(struct.pack("=B",int(data,16)))
 
 	file.close()
 	progressbar(1, "Done")
@@ -94,10 +100,13 @@ if (args.mode == 'write'):
 				ser.write(data_write.encode())
 				while True:
 					serial_ret = ser.read_until().decode().rstrip()
-					if (serial_ret[0] == "#"):
-						if (serial_ret != "#WRBK_OK"):
+					if not serial_ret:
+						continue
+					
+					if serial_ret[0] == "#":
+						if serial_ret != "#WRBK_OK":
 							print ("\n" + serial_ret)
-					break 
+						break
 
 				#prepare address for next block
 				address += 16
@@ -119,13 +128,20 @@ if (args.mode == 'clear'):
 	address = args.address_begin
 	while True:
 		line_read = ser.read_until().decode().rstrip()
-		if (line_read[0] == "#"):
-			if (line_read == "#CLBK_DONE"):
+		if not line_read:
+			continue
+		
+		if line_read[0] == "#":
+			if line_read == "#CLBK_DONE":
 				break				
 			print("\n" + line_read)
 			continue 
-		address = int(line_read, 16)
-		progressbar((address - args.address_begin)/(args.address_end - args.address_begin), "Block " + format(address, '04X'))
+		
+		try:
+			address = int(line_read, 16)
+			progressbar((address - args.address_begin) / max(1, args.address_end - args.address_begin), "Block " + format(address, '04X'))
+		except ValueError:
+			pass
 	progressbar(1, "Done")
 	print()
 	ser.close()
